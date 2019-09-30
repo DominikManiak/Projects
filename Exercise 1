@@ -1,1 +1,22 @@
+## Calculating how many years user have to his 100th birthday, additionally the year when it will be, and showing the message specific amount of times.
+
+import datetime
+
+print('Please insert your details..')
+
+name = input('Please type your name: ')
+age = input('Please type your age: ')
+
+ageInt = int(age)
+
+timeTo100 = 100 - ageInt
+year = datetime.date.today().year + timeTo100
+
+anotherNumber = input('Please type some number: ')
+anotherNumberInt = int(anotherNumber)
+i = 1
+
+while i <= anotherNumberInt:
+    print('%d. %s you have %d years to turn yours 100th birthday. It will be in %d year.' % (i, name, timeTo100, year))
+    i += 1
 
