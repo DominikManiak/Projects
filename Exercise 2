@@ -1,0 +1,22 @@
+# That program count if the input number is odd or even, and also check it after dividing two another numbers.
+
+number = int(input('Please type a number: '))
+
+if number % 4 == 0:
+    print('Your number is a multiple of 4')
+    
+if number % 2 == 0:
+    print('You typed an even number.')
+    
+else:
+    print('You typed an odd number.')
+
+num = int(input('Please type a check number: '))
+divNum = int(input('Please type a one number to divide by check: '))
+eq = num/divNum
+
+if eq % 2 == 0:
+    print('Check divides evenly into num.')
+
+else:
+    print('Check divides oddly into num.')
