@@ -1,0 +1,59 @@
+# 0. A program that returns a list that contains only the elements that are common between the lists (without duplicates)
+# 1. Randomly generate two lists to test this
+# 2. Unique list in one line
+
+# 0.
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+c = []
+
+for i in a:
+    for j in b:
+        if i in c:
+            break
+    
+        elif i == j:
+            c.append(i)
+    
+print(f'List of common elements is {c}')
+
+
+
+# 1.
+import random
+
+x = []
+y = []
+z = []
+
+xLen = random.randrange(1,15)
+yLen = random.randrange(1,15)
+
+i = 1
+j = 1
+
+while i <= xLen:
+    x.append(random.randrange(1,100))
+    i += 1
+print(f'X list is: {x}. List lenght is {xLen}.')
+
+while j <= yLen:
+    y.append(random.randrange(1,100))
+    j += 1
+print(f'Y list is: {y}. List lenght is {yLen}.')
+
+for i in x:
+    for j in y:
+        if i in z:
+            break
+    
+        elif i == j:
+            z.append(i)
+    
+print(f'List of common elements is {z}')
+
+
+# 2.
+r = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+t = print(list(set(r)&set(s)))
