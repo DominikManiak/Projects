@@ -1,0 +1,38 @@
+# Make a two-player Rock-Paper-Scissors game.
+
+print('It is a Rock-Paper-Scissors game')
+i = 0
+
+while i < 1:
+
+    input1 = input('Player 1 - What do you choose? ')
+    input2 = input('Player 2 - What do you choose? ')
+    player1 = input1.lower()
+    player2 = input2.lower()
+
+    if player1 == player2:
+        print('We have a draw there. \n')
+    elif player1 == 'rock' and player2 == 'scissors':
+        print('Player 1 wins. \n')
+    elif player2 == 'rock' and player1 == 'scissors':
+        print('Player 2 wins. \n')
+    elif player1 == 'scissors' and player2 == 'paper':
+        print('Player 1 wins. \n')
+    elif player2 == 'scissors' and player1 == 'paper':
+        print('Player 2 wins. \n')
+    elif player1 == 'paper' and player2 == 'rock':
+        print('Player 1 wins. \n')
+    elif player2 == 'paper' and player1 == 'rock':
+        print('Player 2 wins. \n')
+    else:
+        print('You need to play again. \n')
+
+    question = input('Do you would like to play again? Type \'Yes\' or \'No\' ')      
+
+    if question == 'Yes':
+        print('Lets play again.')
+    elif question == 'No':
+        break
+    else:
+        print('Wrong answer, please type \'Yes\' or \'No\' ')
+    
