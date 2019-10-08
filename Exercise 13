@@ -1,0 +1,28 @@
+# Write a program that asks the user how many Fibonnaci numbers to generate and then generates them. 
+
+def fiboNum():
+    
+    x = int(input('How many Fibonnaci numbers you would like to generate? '))
+
+    def fiboCounter(x):
+
+        genlist = []
+
+        if x == 1:
+            genlist.append(1)
+        elif x == 2:
+            genlist.append(1)
+            genlist.append(1)
+            
+        elif x >2:
+            genlist.append(1)
+            genlist.append(1)
+            
+            for i in range(2, x):
+            
+                genlist.append(genlist[i-2]+genlist[i-1])
+
+        return genlist
+            
+    return fiboCounter(x)  
+    
