@@ -1,0 +1,88 @@
+# Write a password generator in Python.
+
+def password_generator():
+
+    import string
+    import random
+
+    lower = string.ascii_lowercase
+    upper = string.ascii_uppercase
+    digits = string.digits
+    specialchar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+']
+    password = []
+
+    print(' \nHello User, this is a password creator.')
+    print('You can choose difficulty level of your password. Please type a number:')
+    print('''
+    1 - weak password, only lowercased string. \n
+    2 - medium password, comibned lowercased string with numbers. \n
+    3 - strong password, combined lowercased and uppcased strings with numbers. \n
+    4 - extremaly strong password, strings, numbers and special characters.
+    ''')
+
+    difficulty = int(input('I choose: '))
+
+    if difficulty == 1:
+        print('\nOk it will be a weak password.')
+        howLong = (int(input('Please tell me how long your password should be. \nPlease notice that it should be in a range of 8 - 16 characters: ')))
+        for i in range(0,howLong):
+            password += lower[random.randrange(0,len(lower))]
+
+        random.shuffle(password)
+        a = ''.join(password)
+        return 'Your password is: '+a
+            
+    elif difficulty == 2:
+        print('\nOk it will be a medium password.')
+        howLong = (int(input('Please tell me how long your password should be. \nPlease notice that it should be in a range of 8 - 16 characters: ')))
+        i = True
+        while len(password) <= howLong-1:
+            if i == True:
+                password += lower[random.randrange(0,len(lower))]
+                i = False
+            else:
+                password += digits[random.randrange(0,len(digits))]
+                i = True
+                
+        random.shuffle(password)
+        a = ''.join(password)
+        return 'Your password is: '+ a
+        
+    elif difficulty == 3:
+        print('\nOk it will be a strong password.')
+        howLong = (int(input('Please tell me how long your password should be. \nPlease notice that it should be in a range of 8 - 16 characters: ')))
+        
+        while len(password) <= howLong-1:
+            
+            password += lower[random.randrange(0,len(lower))]
+            password += upper[random.randrange(0,len(upper))]
+            password += digits[random.randrange(0,len(digits))]
+           
+        random.shuffle(password)
+        a = ''.join(password)
+        b = a[:howLong]
+        return 'Your password is: ' + b
+
+    elif difficulty == 4:
+        print('\nOk it will be an extremaly strong password.')
+        howLong = (int(input('Please tell me how long your password should be. \nPlease notice that it should be in a range of 8 - 16 characters: ')))
+
+        while len(password) <= howLong-1:
+            
+            password += lower[random.randrange(0,len(lower))]
+            password += upper[random.randrange(0,len(upper))]
+            password += digits[random.randrange(0,len(digits))]
+            password += specialchar[random.randrange(0,len(specialchar))]
+           
+        random.shuffle(password)
+        a = ''.join(password)
+        b = a[:howLong]
+        return 'Your password is: ' + b
+        
+    else:
+        print('\nThere is not such possibility. Please try again.')
+        exit
+
+        
+        
+        
